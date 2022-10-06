@@ -1,6 +1,6 @@
 ---
 title: "GSS challange More Data"
-author: "Janette Quezada!"
+author: "Janette Quezada"
 date: "10/05/2022"
 output: html_document
 ---
@@ -30,9 +30,18 @@ mydata <- na.omit(mydata)
 Is attitude toward capitol punishment (cappun) independent of race (race)?
 If not, then whose view differs from whom??
 
+
+$H_0$There are no difference in attitude toward capital punishment(cappun) based on race.
+
+$H_A$There is a difference in attitude toward capital punishment(cappun) based on race.
+
+
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
+
+Both variables are categorical then that means we have to use the CAT CAT helper file.
+
 
 # Results
 
