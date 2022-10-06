@@ -55,11 +55,11 @@ Both variables are categorical then that means we have to use the CAT CAT helper
 
 
 ```{r}
-barchartGC(~cappun + race,data=mydata)
-barchartGC(~cappun + race,data=mydata, type="percent")
+barchartGC(~race + cappun,data=mydata)
+barchartGC(~race + cappun,data=mydata, type="percent")
 
 ```
-Among those who favor capital punishment about 80% are white and blacks are about 10% are black, and the other races is about 8%.Among those who oppose capital punishment it looks like more of the blacks and the other races are about the same percentage.The whites have less people who oppose capital punishment percentage wise.
+Among those who favor capital punishment about 64% are white and among  blacks are about 42% who favor capital punishment.Among those who oppose capital punishment it looks like more of the blacks and the other races oppose cappun.The whites have less people who oppose capital punishment percentage wise.
 
 
 
@@ -71,8 +71,14 @@ Among those who favor capital punishment about 80% are white and blacks are abou
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+```{r}
+table1 <- xtabs(~race + cappun, data=mydata)
+rowPerc(table1)
+colPerc(table1)
+```
 
 
+According to the data 65% of whites favor capital punishment and 35% whites oppose it.Black race 43% in favor of capital punishment and 57%.Other races 55% favor and 45%  oppose capital punishment.So in terms white race 79.80 are in favor,blacks 11.72, and other 8.47 are in favor.The races who oppose are white for 65.38,blacks 24.11, and other races is 10.51.
 
 ## Now with More data
 
@@ -82,7 +88,84 @@ Among those who favor capital punishment about 80% are white and blacks are abou
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
-`
+````{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+
+```{r}
+fisherXY = function(x, y, confL = 0, printAll=FALSE){
+  # Inputs: 
+  #   x: factor variable, 2 levels
+  #   y: factor variable, n levels
+  # confL: confidence level, default = 0.95
+  #        print only those tables, results if p-value < (1-confL)
+  # printAll: overide the 'print only if p-value < (1-confL), and
+  #           print all tables and fisher test results
+  #
+  # Constraint:
+  #   x and y must be same length
+  #
+  # Outputs:
+  #   All 2x2 Fisher exact tests
+  
+  if(confL<0 || confL> 1){
+    print('error: confL must be between 0 and 1')
+    return(999)
+  }
+  
+  if(!is.factor(x)) x=as.factor(x)
+  if(!is.factor(y)) y=as.factor(y)
+  
+  fisherTable = as.matrix(table(x, y))
+  cat('\ncontingency table:\n')
+  print(fisherTable)
+  cat('\n***All 2X2 tests****\n\n')
+
+  # all 2x2 tests
+  levelsY = levels(y)
+  levelsX = levels(x)
+  
+  m = length(levelsX)
+  n = length(levelsY)
+  
+  confLevel = 0.95
+  if (confL !=0 ) confLevel=confL
+  
+  for (i in 1:(m-1))
+       for(j in ((i+1):m))
+          for (k in 1:(n-1))
+             for (l in ((k+1):n)) {
+                
+                 fisherIndexX = c(i,j)
+                 fisherIndexY = c(k,l)
+                 
+                 fTempTable = as.matrix(fisherTable[fisherIndexX,
+                                        fisherIndexY])
+                 
+                 fisherTest=fisher.test(fTempTable, conf.int = TRUE, 
+                              conf.level = confLevel)
+                 
+                 if((fisherTest$p.value < (1-confLevel) ) || printAll){
+                   
+                       print(c(levelsX[i], levelsX[j]))
+                       print(c(levelsY[k], levelsY[l]))
+                       print(fTempTable)
+                       print(fisherTest)
+                       cat('\n')
+                 }
+                 
+        }
+}
+
+```
+```{r}
+fisherXY(mydata$race,mydata$cappun)
+```
+
 
 
 ## More data version
