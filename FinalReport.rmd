@@ -1,6 +1,6 @@
 ---
 title: "GSS challange Less Data"
-author: "Janette Quezada"
+author: "Janette Quezada "
 date: "10/05/2022"
 output: html_document
 ---
