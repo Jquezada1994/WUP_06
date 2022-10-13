@@ -160,10 +160,13 @@ Since we got p value .0001 we will reject the null hypothesis because it is less
 significant in attitude and  perception of capital punishment based on race.
 
 Based on the fisher test the p value is 0.00001741 meaning there is a difference in attitude toward capital punishment between blacks and whites
+
+
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-Since we got p value .0001 we will reject the null hypothesis because it is less then 0.05.There is a  significant in attitude and  perception of capital punishment based on race.
+
+In the small data set i found that there is a difference on attitude o capital punishment based on race.The only difference is between the blacks and whites.
 
 
