@@ -59,6 +59,8 @@ barchartGC(~race + cappun,data=mydata)
 barchartGC(~race + cappun,data=mydata, type="percent")
 
 ```
+
+
 Among those who favor capital punishment about 64% are white and among  blacks are about 42% who favor capital punishment.Among those who oppose capital punishment it looks like more of the blacks and the other races oppose cappun.The whites have less people who oppose capital punishment percentage wise.
 
 
@@ -174,3 +176,6 @@ fisherXY(mydata$race,mydata$cappun)
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+
+There is a significant difference in attitude toward capital punishment based on race.In this larger data set there is a difference in data set based on attitude in all there races.In the smaller data set there is a significant difference in data set between black and whites in attitude toward capital punishment.
