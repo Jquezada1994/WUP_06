@@ -37,6 +37,9 @@ If not, then whose view differs from whom??
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
+
+Results for cappun and percentage
+
 ## Descriptive Results
 
 ### Graphical Descriptive Results
@@ -48,6 +51,9 @@ barchartGC(~race + cappun,data=mydata)
 barchartGC(~race + cappun,data=mydata, type="percent")
 
 ```
+
+
+
 In this bar graph the white race has about 70% in favor with capital punishment,the blacks a 50 %, and other races a 58% in favor.The whites are opposed to capital punishment of about 30%, the blacks about 56% and the other races 34% are opposed to capital punishment.
 
 
@@ -67,6 +73,9 @@ table1 <- xtabs(~race + cappun, data=mydata)
 rowPerc(table1)
 colPerc(table1)
 ```
+
+
+
 The white 68%,black 47% and other has 61% are in favor.Races who oppose are whites 32%, black 52%, and other races 39%.
 
 
