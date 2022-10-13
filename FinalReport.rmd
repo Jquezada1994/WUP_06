@@ -58,6 +58,8 @@ barchartGC(~race + cappun,data=mydata, type="percent")
 In this bar graph the white race has about 70% in favor with capital punishment,the blacks a 50 %, and other races a 58% in favor.The whites are opposed to capital punishment of about 30%, the blacks about 56% and the other races 34% are opposed to capital punishment.
 
 
+
+
 ## Now with LESS data (more variables give less data due to NA's) create the approate graphic displays to answer the question.
 
 
