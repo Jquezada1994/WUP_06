@@ -33,7 +33,7 @@ If not, then whose view differs from whom??
 $H_0$ there is no difference in attitude toward capitol punishment (cappun) independent of race (race).
 
 
-$H_A$ theree is a difference in attitude toward capitol punishment (cappun) independent of race (race).
+$H_A$ there is a difference in attitude toward capitol punishment (cappun) independent of race (race).
 
 
 # Methods
